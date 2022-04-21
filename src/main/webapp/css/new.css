@@ -1,0 +1,40 @@
+@charset "UTF-8";
+.container{
+    width: 100%;
+    background-image: linear-gradient(#FDFFFF 0%, #E8F3FA 50%, #FDFFFF 100%);
+    margin: 20px auto;
+}
+.new_title{
+    color: #A02E0B;
+    font-size: 2em;
+    text-align: center;
+}
+.new_author{
+    font-size: 1.3em;
+    text-align: center;
+    margin-top: 15px;
+}
+.new_author span{
+    color: #787878;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.new_img{
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.new_img img{
+	display:block;
+    width: 400px;
+    height:300px;
+    margin:0 auto;
+}
+.container_content{
+    width: 900px;
+    font-size: 1.6em;
+    margin: 0 auto;
+    letter-spacing: 0.1em;
+    line-height: 2em;
+    text-indent: 2.2em;
+}

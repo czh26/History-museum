@@ -1,0 +1,83 @@
+<%@ page language="java" contentType="text/html; charset=utf-8"
+    pageEncoding="utf-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>人物春秋</title>
+    <link rel="stylesheet" href="<%=request.getContextPath() %>/layui/src/css/layui.css">
+    <link rel="stylesheet" href="<%=request.getContextPath() %>/css/style.css">
+	<link rel="stylesheet" href="<%=request.getContextPath() %>/css/rwcq.css">
+	<script src="<%=request.getContextPath() %>/layui/src/layui.js"></script>
+	<script>
+		layui.use(['element', 'form'], function(){
+		  var element = layui.element;
+		  element.on('nav(test)', function(elem){
+			console.log(elem)
+		  });
+		});
+    </script>
+</head>
+<body>
+    <div class="top"></div>
+    <div class="navigation">
+		<ul class="layui-nav layui-bg-cyan">
+			<li class="layui-nav-item"><a href="<%=request.getContextPath() %>/history/main">首页</a></li>
+			<li class="layui-nav-item"><a href="<%=request.getContextPath() %>/history/shgc">史海钩沉</a></li>
+			<li class="layui-nav-item layui-this"><a href="<%=request.getContextPath() %>/history/rwcq">人物春秋</a></li>
+			<li class="layui-nav-item"><a href="<%=request.getContextPath() %>/history/gzdt">工作动态</a></li>
+			<li class="layui-nav-item"><a href="<%=request.getContextPath() %>/history/xxgg">信息公告</a></li>
+			<li class="layui-nav-item"><a href="<%=request.getContextPath() %>/history/lxwm.jsp">联系我们</a></li>
+		  </ul>
+	</div>
+	
+	<div class="content">
+		<div class="shgc_title">
+			<p><span>专题展</span>览</p>
+		</div>
+		<div class="shgc_news">
+			<div class="web_adress">当前位置：<a href="index.jsp">首页</a>|<a href="">人物春秋</a></div>
+			<div class="news_title">
+				<span>人物春秋</span><img src="<%=request.getContextPath() %>/img/history.png" alt="">
+				<hr class="style-one"/>
+			</div>
+			<div class="news_img">
+				<ul class="news_img_content">
+					<c:forEach items="${rwcqList}" var="rwcq" begin="0" end ="8">
+					<li>
+                        <a href="new2?id=${rwcq.id}" target="_blank">
+                            <img src="<%=request.getContextPath() %>/img/${rwcq.img}" alt="">
+                            <p>${rwcq.title}</p>
+                        </a>
+                    </li>
+                    </c:forEach>
+				</ul>
+				<ul class="pagination modal-1">
+				    <li> <span class="left">第${currPage}页</span></li>
+				    <li> <a href="?start=1">首页</a></li>
+				    <li><a href="?start=${pre}">上一页</a></li>
+				    <li><a href="?start=${next}">下一页</a></li>
+				    <li> <a href="?start=${last}">末页</a></li>
+				    <li> <span class="right">共${total}条</span></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<div class="footer">
+			<img src="<%=request.getContextPath() %>/img/ylsf_wx.jpg" alt="">
+			<span id="adress">
+				<p>
+					<a href="https://www.ylnu.edu.cn/">伊犁师范大学</a>
+					<p>
+						地址：伊宁市解放西路448号(解放路)
+						<br>邮编：835000
+					</p>
+				</p>
+			</span>
+	</div>
+</body>
+</html>

@@ -1,0 +1,325 @@
+@charset "UTF-8";
+/* shuffling轮播图 */
+.shuffling{
+	width:100%;
+}
+.layui-carousel{
+	width:1200px;
+	margin:0 auto;
+}
+#lb{
+    background-color: #B49E74;
+}
+#lb>img{
+    width: 70%;
+    height: 100%;
+}
+#news{
+    float: right;
+    width: 30%;
+    height: 100%;
+    font-size: 1.6em;
+    text-indent: 2em;
+    color: white;
+}
+#news p{
+    padding-top: 3em;
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+    letter-spacing: 0.1em;
+    line-height: 1.5em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    /* 盒子垂直对齐 */
+    -webkit-box-orient: vertical;
+    /* 几行 */
+    -webkit-line-clamp: 8;
+}
+#news_js{
+    width: 40%;
+    height: 2.5em;
+    position: absolute;
+    bottom: 3em;
+    right: 2em;
+    text-indent: 0;
+    display: flex;
+}
+#red{
+    width: 25%;
+    background-color: #A02E0B;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#green{
+    width: 75%;
+    background-color: #483F2E;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.8;
+}
+#green a{
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: white;
+}
+/* inner */
+.inner{
+    width: 120em;
+    margin: 1em auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 220px 350px 300px;
+    grid-row-gap: 2em;
+    grid-column-gap: 2em;
+    grid-template-areas: 
+    "top1 top2 top3"
+    "left left right"
+    "bottom bottom bottom";
+}
+.inner_top1{
+    grid-area: top1;
+}
+.inner_top1 p img{
+    width: 1.2em;
+    position: relative;
+    bottom: 0.1em;
+    right: 0.2em;
+}
+.inner_top2{
+    grid-area: top2;
+}
+.inner_top2 p img{
+    width: 1.2em;
+    position: relative;
+    bottom: 0.1em;
+    right: 0.2em;
+}
+.inner_top3{
+    grid-area: top3;
+}
+.inner_top3 p img{
+    width: 1.2em;
+    position: relative;
+    bottom: 0.1em;
+    right: 0.2em;
+}
+.inner_title{
+    font-size: 2.5em;
+    color: #976051;
+    text-align: center;
+    padding-top: 0.5em;
+}
+.inner_top_content{
+    color: gray;
+    padding-top: 1em;
+    padding-left: 15%;
+    padding-right: 15%;
+    height: auto;
+    line-height:1.5em;
+    text-align: justify;
+    font-size: 1.4em;
+    text-indent: 2em;
+}
+
+.inner_left{
+    border-radius: 1em;
+    background-image: linear-gradient( #E8F3FA 0%, #FDFFFF 100%);
+    grid-area: left;
+}
+.inner_left img{
+    width: 1.2em;
+    position: relative;
+    bottom: 0.1em;
+    left: 0.5em;
+}
+.inner_left_content{
+    width: 100%;
+    height: 50%;
+}
+.important{
+    width: 100%;
+    height: 100%;
+}
+.important img{
+    width: 28em;
+    height: 16em;
+    padding-left: 5%;
+    float: left;
+}
+.important_news{
+    width: 55%;
+    float: right;
+    position: relative;
+    bottom:0.6em;
+    right:1em;
+}
+.news_title{
+    color: #976051;
+    font-size: 1.6em;
+    margin-top: 1em;
+    margin-right: 5em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+.news_summary{
+    font-size: 1.3em;
+    margin-top: 1em;
+    margin-right: 5em;
+    letter-spacing: 0.1em;
+    line-height: 1.8em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+}
+.news_summary p{
+    font-size: 1.3em;
+    margin-top: 1em;
+    margin-right: 5em;
+    letter-spacing: 0.1em;
+    line-height: 1.8em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+}
+.news_n1{
+    width: 100%;
+    height: 3.5em;
+}
+.news_n_title{
+    margin-left: 5%;
+    font-size: 1.6em;
+}
+.news_time{
+    color: #976051;
+    float: right;
+    font-size: 1.6em;
+    margin-right: 5em;
+}
+.inner_right{
+    border-radius: 1em;
+    background-image: linear-gradient( #E8F3FA 0%, #FDFFFF 100%);
+    grid-area: right;
+}
+.inner_right img{
+    width: 1.2em;
+    position: relative;
+    bottom: 0.1em;
+    left: 0.1em;
+}
+.inner_right_content{
+    width: 100%;
+    height: 100%;
+}
+.right_important p{
+    color: #976051;
+    font-size: 1.6em;
+    margin-top: 1em;
+    margin-left: 5%;
+    margin-right: 5%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}
+.right_important span{
+    font-size: 1.3em;
+    display: block;
+    margin-top: 0.5em;
+    margin-left: 5%;
+    margin-right: 5%;
+    letter-spacing: 0.1em;
+    line-height: 1.8em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+}
+.right_news_n1{
+    width: 100%;
+    height: 3em;
+    margin-top: 1.5em;
+}
+.right_news_title{
+    font-size: 1.4em;
+    width:250px;
+    margin-left: 5%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    display:inline-block;
+}
+.right_news_time{
+    color: #976051;
+    font-size: 1.4em;
+    float: right;
+    margin-right: 5%;
+}
+.inner_bottom{
+    grid-area: bottom;
+    border-radius: 2em;
+    background-image: url(../img/rolling_background.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.inner_bottom img{
+    width: 1.2em;
+    position: relative;
+    bottom: 0.1em;
+    left: 0.2em;
+}
+.inner_title1{
+    font-size: 2em;
+    padding-top: 1em;
+    padding-left: 2em;
+}
+.inner_title1 a{
+    color: #B69D70;
+    float: right;
+    font-size: 14px;
+    margin-right: 5%;
+    line-height: 2em;
+}
+/* 循环滚动图 */
+#photo {
+    height: 25em;
+    width: 100em;
+    overflow: hidden;
+    display: flex;
+    margin-left: 10em;
+}
+#demo{
+    overflow:hidden;
+    width:100em;
+}
+#photo img {
+    width: 25em;
+    height: 20em;
+    margin:0 auto;
+}
+.news_rolling{
+    padding-left: 3em;
+    padding-right: 3em;
+}
+.news_rolling p{
+    width: 250px;
+    text-align: center;
+    color: #976051;
+    font-weight: bold;
+    font-size: 1.6em;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
