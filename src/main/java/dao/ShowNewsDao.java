@@ -24,7 +24,7 @@ public class ShowNewsDao implements IShowIndexDao {
 			PreparedStatement pstmt = null;
 			ResultSet rs = null;
 			// 定义SQL语句
-			String sql = "select * from news_ where type = ? ";
+			String sql = "select * from news where type = ? ";
 			try {
 				// 编译SQL语句
 				pstmt = conn.prepareStatement(sql);
@@ -63,7 +63,7 @@ public class ShowNewsDao implements IShowIndexDao {
 			PreparedStatement pstmt = null;
 			ResultSet rs = null;
 			// 定义SQL语句
-			String sql = "select * from news_  ";
+			String sql = "select * from news  ";
 			try {
 				// 编译SQL语句
 				pstmt = conn.prepareStatement(sql);
@@ -100,7 +100,7 @@ public class ShowNewsDao implements IShowIndexDao {
 			PreparedStatement pstmt = null;
 			ResultSet rs = null;
 			// 定义SQL语句
-			String sql = "select * from news_ where id = ? ";
+			String sql = "select * from news where id = ? ";
 			try {
 				// 编译SQL语句
 				pstmt = conn.prepareStatement(sql);

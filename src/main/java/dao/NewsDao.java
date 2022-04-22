@@ -31,7 +31,7 @@ public class NewsDao implements INewsDao {
 				if(conn!=null) {
 					PreparedStatement pstmt = null;
 					//定义SQL语句
-					String sql = "insert into news_ (title,type,content,author,date,img) values(?,?,?,?,?,?)";
+					String sql = "insert into news (title,type,content,author,date,img) values(?,?,?,?,?,?)";
 					try {
 						//编译SQL语句
 						pstmt = conn.prepareStatement(sql);
@@ -62,7 +62,7 @@ public class NewsDao implements INewsDao {
     public int GetTotal() {
         int total = 0;
         try (Connection c = getConnection(); Statement s = c.createStatement();) {
-            String sql = "select count(id) from hero ";
+            String sql = "select count(id) from news ";
             ResultSet rs = s.executeQuery(sql);
             while (rs.next()) {
                 total = rs.getInt(1);
@@ -87,7 +87,7 @@ public class NewsDao implements INewsDao {
 			PreparedStatement pstmt = null;
 			ResultSet rs = null;
 			//定义SQL语句
-			String sql = "UPDATE news_ SET title = ?,type= ?,content= ?,author= ?,date= ?  WHERE id = ?  ";
+			String sql = "UPDATE news SET title = ?,type= ?,content= ?,author= ?,date= ?  WHERE id = ?  ";
 			try {
 				//编译SQL语句
 				pstmt = conn.prepareStatement(sql);
@@ -125,7 +125,7 @@ public class NewsDao implements INewsDao {
 					PreparedStatement pstmt = null;
 					ResultSet rs = null;
 					//定义SQL语句
-					String sql = "DELETE FROM news_  WHERE id = ?  ";
+					String sql = "DELETE FROM news  WHERE id = ?  ";
 					try {
 						//编译SQL语句
 						pstmt = conn.prepareStatement(sql);

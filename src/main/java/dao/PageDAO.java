@@ -28,7 +28,7 @@ public class PageDAO {
 	public int ShgcTotal() {
 		int total = 0;
 		try (Connection c = getConnection(); Statement s = c.createStatement();) {
-			String sql = "select count(id) from news_ where type='shgc'";
+			String sql = "select count(id) from news where type='shgc'";
 			ResultSet rs = s.executeQuery(sql);
 			while (rs.next()) {
 				total = rs.getInt(1);
@@ -44,7 +44,7 @@ public class PageDAO {
 	public int RwcqTotal() {
 		int total = 0;
 		try (Connection c = getConnection(); Statement s = c.createStatement();) {
-			String sql = "select count(id) from news_ where type='rwcq'";
+			String sql = "select count(id) from news where type='rwcq'";
 			ResultSet rs = s.executeQuery(sql);
 			while (rs.next()) {
 				total = rs.getInt(1);
@@ -60,7 +60,7 @@ public class PageDAO {
 	public int GzdtTotal() {
 		int total = 0;
 		try (Connection c = getConnection(); Statement s = c.createStatement();) {
-			String sql = "select count(id) from news_ where type='gzdt'";
+			String sql = "select count(id) from news where type='gzdt'";
 			ResultSet rs = s.executeQuery(sql);
 			while (rs.next()) {
 				total = rs.getInt(1);
@@ -76,7 +76,7 @@ public class PageDAO {
 	public int XxggTotal() {
 		int total = 0;
 		try (Connection c = getConnection(); Statement s = c.createStatement();) {
-			String sql = "select count(id) from news_ where type='xxgg'";
+			String sql = "select count(id) from news where type='xxgg'";
 			ResultSet rs = s.executeQuery(sql);
 			while (rs.next()) {
 				total = rs.getInt(1);
@@ -93,7 +93,7 @@ public class PageDAO {
 	public List<News> list(News n, int start, int count) {
 		List<News> news = new ArrayList<>();
 
-		String sql = "select * from news_ where type=? order by id desc limit ?,? ";
+		String sql = "select * from news where type=? order by id desc limit ?,? ";
 		try (Connection c = getConnection(); PreparedStatement ps = c.prepareStatement(sql);) {
 			ps.setObject(1, n.getType());
 			ps.setInt(2, start);

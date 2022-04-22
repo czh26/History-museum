@@ -36,7 +36,7 @@ public class AdminPrivilegeFilter implements Filter {
 		// 2判断是否具有权限
 		User user = (User) request.getSession().getAttribute("adminUser");
 
-		if (user != null && 0==user.getPower()) {
+		if (/* user != null && */0==user.getPower()) {
 			// 3.放行
 			chain.doFilter(request, response);
 			return;
