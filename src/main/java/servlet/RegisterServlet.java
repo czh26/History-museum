@@ -1,6 +1,7 @@
 package servlet;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -60,14 +61,17 @@ public class RegisterServlet extends HttpServlet {
 		User u = new User(username, password);
 		//判断用户是否是已经注册的用户
 		int uNum = UserService.checkUser(u);
-		
 		HttpSession session = request.getSession();
+		
+		request.setCharacterEncoding("utf-8");
+		response.setContentType("text/html;charset=utf-8");
+		PrintWriter out = response.getWriter();
 		//注册成功，将用户对象放到session对象中 
 		if(uNum==0) {
 			UserService.regist(u);
-			request.setAttribute("unLoginInfo", "");
-//			response.sendRedirect("index.jsp");
-			request.getRequestDispatcher("login.jsp").forward(request, response);
+			out.print("<script>alert('注册成功!');window.location.href='login.jsp'</script>");
+//			response.sendRedirect("login.jsp");
+//			request.getRequestDispatcher("login.jsp").forward(request, response);
 		}else {
 			//注册失败，跳转到登录页面
 //			response.sendRedirect("login.jsp");

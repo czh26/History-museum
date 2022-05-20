@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import entity.News;
 import entity.User;
 import util.DBUtil;
 
@@ -46,7 +47,8 @@ public class UserDao implements IUserDao {
 		}
 		return count;
 	}
-
+	
+	
 	@Override
 	public User login(User u) {
 		//先定义一个空对象，如果方法执行过程有异常，外面就是接收到null
@@ -190,5 +192,37 @@ public class UserDao implements IUserDao {
 		return i;
 	}
 
+	@Override
+	public int deleteUser(User u) {
+		//先定义一个空对象，如果方法执行过程有异常，外面就是接收到null
+		int i = 1;
+		//获取数据库连接对象
+		Connection conn = DBUtil.getConn();
+		//连接对象不为空才可以进行数据库操作
+		if(conn!=null) {
+			PreparedStatement pstmt = null;
+			ResultSet rs = null;
+			//定义SQL语句
+			String sql = "DELETE FROM user  WHERE id = ?  ";
+			try {
+				//编译SQL语句
+				pstmt = conn.prepareStatement(sql);
+				//对SQL的？进行赋值
+				pstmt.setObject(1, u.getId());
+				pstmt.executeUpdate();
+				//单结果只需要用if
+				//rs.next()用于判断是否有下一条（也就是是否有数据）
+				
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} finally {
+				//关闭资源
+				DBUtil.closeAll(conn, pstmt, rs);
+			}
+		}
+		
+		return i;
+	}
 }
 

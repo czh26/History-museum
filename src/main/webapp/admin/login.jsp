@@ -30,12 +30,12 @@
 								<label for="exampleInputPassword1">密码：</label>
 								<input type="password" class="form-control " name="password" />
 							</div>
-							<label for="exampleInputEmail1">${unLoginInfo}</label>
+							<%-- <label for="exampleInputEmail1">${unLoginInfo}</label>
 							<div class="checkbox">
 								<label><input type="checkbox" />记住</label>
-							</div>
-							<a href="register.jsp"><label for="exampleInputEmail1">注册</label></a>
+							</div> --%>
 							<button type="submit" class="btn btn-default">登录</button>
+							<a href="register.jsp"><label for="exampleInputEmail1">注册</label></a>
 						</form>
 					</div>
 					<div class="col-md-3"></div>

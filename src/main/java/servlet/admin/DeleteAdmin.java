@@ -1,5 +1,6 @@
 package servlet.admin;
 
+import java.io.Console;
 import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -21,7 +22,9 @@ import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
 
 import entity.News;
+import entity.User;
 import service.NewsService;
+import service.UserService;
 
 
 
@@ -53,28 +56,14 @@ public class DeleteAdmin extends HttpServlet {
 		// TODO Auto-generated method stub
 		//doGet(request, response);
 		
-		News news = new News();
+		User user = new User();
 		//获取id
 		String id = request.getParameter("id");
-		System.out.println(id+"------------id________-----");
-		news.setId(Integer.parseInt(id));
-		int i = NewsService.deleteNews(news);
-		if(i==1) {
-			request.setAttribute("changeInfo", "<script>alert(\"删除成功！\")</script>");
-		}else {
-			request.setAttribute("changeInfo", "<script>alert(\"删除失败！\")</script>");
-		}
-		
-		System.out.println("----删除id为"+id+"的文章！！----");
-		request.getRequestDispatcher("news-change").forward(request, response);
+		user.setId(Integer.parseInt(id));
+		int i = UserService.deleteUser(user);
+		System.out.println("删除id为"+id+"的用户！！");
+		request.getRequestDispatcher("member-list").forward(request, response);
 		
 	}
 
-	/**
-	 * 上传图片的方法
-	 * @param request
-	 * @param response
-	 * @return 图片路径
-	 * @throws IOException
-	 */
 }

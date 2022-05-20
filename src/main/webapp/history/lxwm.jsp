@@ -62,7 +62,7 @@
 			</div>
 			<div style="font-size: 1.6em;line-height: 2em;">
 				校史馆地址：未知
-                <br>校史馆参观：000-0000000 
+                <br>校史馆参观预约：000-0000000 
 			</div>
 		</div>
 	</div>

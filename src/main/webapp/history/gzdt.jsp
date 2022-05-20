@@ -15,7 +15,6 @@
 	<script>
 		layui.use(['element', 'form'], function(){
 		  var element = layui.element;
-		
 		  element.on('nav(test)', function(elem){
 			console.log(elem)
 		  });

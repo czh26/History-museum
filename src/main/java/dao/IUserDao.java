@@ -15,6 +15,12 @@ public interface IUserDao {
 	 * @param u 用户对象
 	 * @return 数据库受影响的行数
 	 */
+	public int deleteUser(User u);
+	/**
+	 * 删除用户的方法
+	 * @param u 用户对象
+	 * @return 数据库受影响的行数
+	 */
 	public int regist(User u);
 	/**
 	 * 登录的方法

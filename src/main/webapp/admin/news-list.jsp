@@ -48,7 +48,7 @@
 							</form>
 						</div>
 						<div class="layui-card-header">
-							<!--<a href="send-news.jsp"><button class="layui-btn" ><i class="layui-icon"></i>添加</button></a>-->
+							<!--<a href="send-news.jsp"><button class="layui-btn" ><i class="layui-icon"></i>添加</button></a>--><h2>文章列表</h2>
 						</div>
 						<div class="layui-card-body ">
 							<table class="layui-table layui-form">

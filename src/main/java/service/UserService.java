@@ -24,8 +24,12 @@ public class UserService {
 	 */
 	public static int regist(User u) {
 		//在服务层中，可以对数据进行处理，这个一般不会在访问数据库的地方做，而在当前类中实现
-		
 		return ud.regist(u);
+	}
+	
+	public static int deleteUser(User u) {
+		//在服务层中，可以对数据进行处理，这个一般不会在访问数据库的地方做，而在当前类中实现
+		return ud.deleteUser(u);
 	}
 	
 	/**
